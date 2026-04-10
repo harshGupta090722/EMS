@@ -27,9 +27,7 @@ const LoginForm = ({ role, title, subtitle }) => {
 
         <div className='w-full max-w-md animate-fade-in'>
           <Link to="/login" className='inline-flex items-center gap-2 text-slate-400 hover:text-slate-700 text-sm mb-10 transition-colors'>
-
             <ArrowLeftIcon size={16} />Back to portals
-
           </Link>
 
           <div className="mb-8">

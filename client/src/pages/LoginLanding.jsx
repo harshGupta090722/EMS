@@ -58,8 +58,9 @@ const LoginLanding = () => {
 
 
         </div>
-      </div >
-    </div >
+      </div>
+
+    </div>
   )
 }
 

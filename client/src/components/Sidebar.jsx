@@ -18,7 +18,7 @@ const Sidebar = () => {
         setMobileOpen(false);
     }, [pathname])
 
-    const role = "" || "EMPLOYEE";
+    const role = "ADMIN" || "EMPLOYEE";
 
     const navItems = [
         {
@@ -104,7 +104,7 @@ const Sidebar = () => {
                 {navItems.map((item) => {
 
                     const isActive = pathname.startsWith(item.href)
-                    
+
                     return (
                         <Link key={item.name} to={item.href} className={`group flex items-center gap-3 px-3 py-2.5 rounded-md text-[13px] font-medium transition-all duration-150 relative ${isActive ? "bg-indigo-500/12 text-indigo-300" : "text-slate-300 hover:text-white hover:bg-white/4"}`}>
                             {isActive && <div className='absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-5 rounded-r-full bg-indigo-500' />}

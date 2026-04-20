@@ -21,11 +21,11 @@ const Employees = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1000)
-  }, [])
+  }, [selectedDept])
 
   useEffect(() => {
     fetchEmployees();
-  }, [])
+  }, [fetchEmployees])
 
   const filtered = employees.filter((emp) => `${emp.firstName} ${emp.lastName} ${emp.email} ${emp.position}`.toLowerCase().includes(search.toLowerCase()));
 
@@ -79,7 +79,7 @@ const Employees = () => {
           )}
         </div>
       )}
-      
+
       {/*Create Employee Modal */}
       {showCreateModal && (
         <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={() => { setShowCreateModal(false) }}>

@@ -1,1 +1,0 @@
-navigate(-1) takes back the user to the previous page

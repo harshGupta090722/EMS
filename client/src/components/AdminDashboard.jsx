@@ -1,5 +1,4 @@
 import { Building2Icon, CalendarIcon, FileTextIcon, UserIcon } from 'lucide-react';
-import React from 'react'
 
 const AdminDashboard = ({ data }) => {
     const stats = [
@@ -35,6 +34,7 @@ const AdminDashboard = ({ data }) => {
                 <p className='page-subtitle'>
                     Welcome Back,Admin -here's your overview</p>
             </div>
+            
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8'>
                 {stats.map((s) => (
                     <div key={s.label} className='card card-hover p-5 sm:p-6 relative overflow-hidden group flex items-center justify-between'>

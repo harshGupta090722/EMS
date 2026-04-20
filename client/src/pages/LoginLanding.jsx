@@ -18,6 +18,7 @@ const LoginLanding = () => {
       icon: UserIcon
     }
   ]
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <LoginLeftSide />
@@ -48,8 +49,6 @@ const LoginLanding = () => {
               </Link>
             ))}
           </div>
-
-
 
           {/* Footer*/}
           <div className="mt-12 text-center md:text-left text-sm text-slate-400">

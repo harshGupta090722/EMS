@@ -13,7 +13,7 @@ const Layout = () => {
           </div>
         </div>
       </main>
-      
+
     </div>
   )
 }

@@ -28,6 +28,7 @@ export const dummyProfileData = {
     lastName: "Doe",
     email: "johndoe@example.com",
     image: null,
+    position: "Software Engineer",
 };
 
 export const dummyEmployeeData = [

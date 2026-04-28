@@ -50,7 +50,7 @@ const PayslipList = ({ payslips, isAdmin }) => {
 
                                         <td className='text-center'>
                                             <button
-                                                onClick={() => window.open(`/print/paySlips/${payslip._id || payslip.id}`)}
+                                                onClick={() => window.open(`/print-payslip/${payslip._id || payslip.id}`)}
                                                 className='inline-flex items-ceneter px-3 py-1.5 text-xs font-medium rounded text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors ring-1 ring-blue-600/10'>
                                                 <Download className='w-3 h-3 mr-1.5' />
                                                 Download

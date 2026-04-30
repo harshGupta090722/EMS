@@ -110,7 +110,7 @@ export const updateLeaveStatus = async (req, res) => {
     try {
         const { status } = req.body;
 
-        if (!["AP[ROVED", "REJECTED", "PENDING"].includes(status))
+        if (!["APPROVED", "REJECTED", "PENDING"].includes(status))
             return res.status(400).json({ error: "invalid status" });
 
 

@@ -8,6 +8,8 @@ import exmployeesRouter from "./routes/employeeRoutes.js";
 import authRouter from "./routes/authRoutes.js";
 import profileRouter from "./routes/profileRoutes.js";
 import attendanceRouter from "./routes/AttendanceRoutes.js";
+import leaveRouter from "./routes/leaveRoutes.js";
+import paySlipRouter from "./routes/paySlipsRoutes.js";
 
 
 const app = express()
@@ -30,6 +32,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/employees', exmployeesRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/attendance', attendanceRouter);
+app.use('/api/leave', leaveRouter);
+app.use('/api/payslip', paySlipRouter);
 
 
 await connectDb();

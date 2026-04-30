@@ -1,4 +1,4 @@
-import { jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 export const protect = (req, res, next) => {
     try {
@@ -27,7 +27,7 @@ export const protect = (req, res, next) => {
 
 
 export const adminProtect = (req, res, next) => {
-    if (!req?.session?.role !== "ADMIN") {
+    if (req?.session?.role !== "ADMIN") {
         return res.status(401).json({ error: "Admin access required" })
     }
 

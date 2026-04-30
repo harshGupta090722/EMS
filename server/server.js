@@ -1,7 +1,13 @@
+import "dotenv/config";
 import express from "express"
 import cors from "cors";
 import multer from "multer";
 import { connectDb } from "./config/db.js";
+
+import exmployeesRouter from "./routes/employeeRoutes.js";
+import authRouter from "./routes/authRoutes.js";
+import profileRouter from "./routes/profileRoutes.js";
+import attendanceRouter from "./routes/AttendanceRoutes.js";
 
 
 const app = express()
@@ -20,10 +26,13 @@ app.get('/', (req, res) =>
     res.send("server is running")
 );
 
+app.use('/api/auth', authRouter);
+app.use('/api/employees', exmployeesRouter);
+app.use('/api/profile', profileRouter);
+app.use('/api/attendance', attendanceRouter);
+
 
 await connectDb();
-
-
 
 app.listen(PORT, () => {
     console.log(`server is running on port no ${PORT}`)

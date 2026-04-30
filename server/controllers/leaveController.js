@@ -26,8 +26,8 @@ export const createLeave = async (req, res) => {
         if (new Date(startDate) < today || new Date(endDate) < today)
             return res.status(400).json({ message: "Please provide valid dates" });
 
-        if (new Date(endDate) < today || new Date(startDate) < today)
-            return res.status(400).json({ message: "end date must be greater than start date" });
+        if (new Date(endDate) < new Date(startDate))
+            return res.status(400).json({ message: "End date must be greater than start date" });
 
         const leave = await LeaveApplication.create({
             employeeId: employee._id,

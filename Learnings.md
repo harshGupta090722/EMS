@@ -27,4 +27,9 @@ Sequential → takes sum of all times
 Parallel → takes max of all times
 
 
+-->process.exit(code);
+code = 0 → normal/success exit
+code ≠ 0 → error/failure exit
+
+
 -->

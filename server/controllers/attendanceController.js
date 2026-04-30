@@ -1,5 +1,5 @@
 import Attendance from "../models/Attendance.js";
-import { Employee } from "../models/Employee.js"
+import Employee from "../models/Employee.js"
 
 
 //clock in/out for employee
@@ -24,7 +24,7 @@ export const clockInOut = async (req, res) => {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        const existing = await getAttendance.findOne({
+        const existing = await Attendance.findOne({
             employeeId: employee._id,
             date: today
         })

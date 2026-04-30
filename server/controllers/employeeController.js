@@ -39,7 +39,7 @@ export const getEmployee = async (req, res) => {
 export const createEmployee = async (req, res) => {
     try {
 
-        const { firstName, lastName, email, phone, position, department, basicSalary, allowances, deductions, joinDate, password, role, bio } = req.bod;
+        const { firstName, lastName, email, phone, position, department, basicSalary, allowances, deductions, joinDate, password, role, bio } = req.body;
 
 
         if (!email || !password || !firstName || !lastName)
@@ -88,7 +88,7 @@ export const createEmployee = async (req, res) => {
 export const updateEmployee = async (req, res) => {
     try {
         const { id } = req.params;
-        const { firstName, lastName, email, phone, position, department, basicSalary, allowances, deductions, password, role, bio, employmentStatus } = req.bod;
+        const { firstName, lastName, email, phone, position, department, basicSalary, allowances, deductions, password, role, bio, employmentStatus } = req.body;
 
 
         const employee = await Employee.findById(id);

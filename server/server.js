@@ -10,7 +10,7 @@ import profileRouter from "./routes/profileRoutes.js";
 import attendanceRouter from "./routes/AttendanceRoutes.js";
 import leaveRouter from "./routes/leaveRoutes.js";
 import paySlipRouter from "./routes/paySlipsRoutes.js";
-
+import dashboardRouter from "./routes/dashboardRoutes.js";
 
 const app = express()
 
@@ -34,6 +34,7 @@ app.use('/api/profile', profileRouter);
 app.use('/api/attendance', attendanceRouter);
 app.use('/api/leave', leaveRouter);
 app.use('/api/payslip', paySlipRouter);
+app.use('/api/dashboard', dashboardRouter);
 
 
 await connectDb();

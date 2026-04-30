@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const leaveApplicationSchema = new mongoose.Schema({
     employeeId: {
-        type: mongoose.Schhema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Employee",
         required: true,
     },

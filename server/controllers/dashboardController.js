@@ -2,6 +2,7 @@ import { DEPARTMENTS } from "../constants/departments.js";
 import Attendance from "../models/Attendance.js"
 import Employee from "../models/Employee.js"
 import LeaveApplication from "../models/LeaveApplication.js";
+import Payslip from "../models/Payslip.js";
 
 
 //Get dashboard for employee and admin
@@ -18,7 +19,7 @@ export const getDashboard = async (req, res) => {
                     Attendance.countDocuments({
                         date: {
                             $gte: new Date(new Date().setHours(0, 0, 0, 0)),
-                            $lt: new Date(new Date().setHours(0, 0, 0, 0)),
+                            $lt: new Date(new Date().setHours(23, 59, 59, 999)),
                         }
                     }),
                     LeaveApplication.countDocuments({ status: "PENDING" })
@@ -37,11 +38,12 @@ export const getDashboard = async (req, res) => {
             if (!employee)
                 return res.status(404).json({ error: "Employee not found" });
 
+            const today = new Date();
             const [currentMonthAttendance, pendingLeaves, latestPayslip] = await Promise.all([
                 Attendance.countDocuments({
                     employeeId: employee._id,
                     date: {
-                        $gte: new Date(today.getFullYear(), today.getMonth(), today.getDate(), 1),
+                        $gte: new Date(today.getFullYear(), today.getMonth(), 1),
                         $lt: new Date(today.getFullYear(), today.getMonth() + 1, 1),
                     }
                 }),
